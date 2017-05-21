@@ -95,15 +95,22 @@
 	<!--  //////////////////////////////////////////////-->
 
 	<div class=stena>
+		<?php
+	if($_SESSION['id'] == $id){
+	?>
+	<h3>Мои занятия</h3>
 	<?php
-/*	foreach($dbh->query("SELECT * FROM user_blog where user_id=$id ORDER BY id DESC") as $row){
+	}
+
+	foreach($dbh->query("SELECT * FROM events where prepod_id=$id ORDER BY id DESC") as $row){
 	?>
 		<div class="message">
-			<div class="name_user"><p><?=$row['name'];?> / <?=$row['data'];?></p></div>
+			<div class="name_user"><p><?=$row['title'];?></div>
 			<div class="data"><?=$row['content'];?></div>
+			<a href=event.php?id_event=<?=$row['id']?>&id_teacher=<?=$row['prepod_id']?>>Перейти</a>
 		</div>
 	<?php
-	}*/
+	}
 	?>
 	</div>
 

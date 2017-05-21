@@ -1,0 +1,5 @@
+ul.menu_g {
+  display: flex;
+  list-style-type: none;
+  /* margin-left: 0px; */
+}

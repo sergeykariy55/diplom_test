@@ -75,7 +75,7 @@
 		$name = $_POST['name'];
 		$content = $_POST['data'];
 		$user_id = $_SESSION['id'];
-
+		$p_name = $result['fio'];
 		$q = "INSERT INTO `events`(`prepod_id`,`content`, `title`) VALUES ('$user_id','$content','$name')";
 		if($dbh->query($q)){
 			echo "<p class=war1>Ваша запись успешно добавлена</p>";
@@ -85,7 +85,7 @@
 
 		$users = $_POST['users'];
 		foreach ($users as $key => $value) {
-			$dbh->query("INSERT INTO `user_events`(`id_user`,`href`, `content`) VALUES ('$value','event.php','$name')");
+			$dbh->query("INSERT INTO `user_events`(`id_user`, `name_prepod`, `content`, `title_events`) VALUES ('$value','$p_name','$content','$name')");
 		}
 
 

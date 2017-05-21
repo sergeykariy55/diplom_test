@@ -11,7 +11,7 @@
 <div class="container">
 <ul class=menu_g>
 	<li><span class=ad><a href=index.php class="c1">Главная</a></span></li>
-	<li><a href=event.php class=a_click>Уведомления</a></li>
+	<li><a href=user_events.php?id=<?= $_SESSION['id']; ?> class=a_click>Уведомления</a></li>
 	<li><a href=stat.php class=a_click>Занятия</a></li>
 	<li><a href=users.php class=a_click>Пользователи</a></li>
 	<li><a href=student.php?id=<?= $_SESSION['id']; ?> class=a_click><?= $_SESSION['name'];?></a></li>

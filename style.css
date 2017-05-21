@@ -41,6 +41,13 @@ textarea {
     /* border-radius: 6px; */
     margin-top: 10px;
 }
+fieldset {
+    padding: 10px;
+}
+.form_teaher_title_user {
+    width: 392px;
+    /* float: right; */
+}
 .stena {
     margin-top: 15px;
 }

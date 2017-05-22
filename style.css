@@ -9,11 +9,42 @@ ul.menu_g {
   padding: 9px;
 }
 .container {
-  width: 800px;
-  background: rgb(198, 199, 237);
-  margin: auto;
-  padding: 20px;
+    width: 800px;
+    background: rgb(198, 199, 237);
+    margin: auto;
+    padding: 20px;
+    position: absolute;
+    left: 0px;
+    right: 0px;
  
+}
+.content_user_lenta {
+    width: 366px;
+    margin-left: 73px;
+    padding: 6px;
+}
+.img_user_lenta {
+    float: left;
+}
+img.img_user_lenta {
+    width: 60px;
+}
+img.img_info {
+    position: absolute;
+    width: 192px;
+    margin-left: 574px;
+    margin-top: -47px;
+}
+img.img_user {
+    width: 30px;
+}
+.info {
+    padding: 30px;
+    background: white;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    color: #5f72ba;
+    font-size: 16px;
 }
 .profile {
     display: flex;
@@ -75,12 +106,13 @@ ul.rubi {
 }
 .right_b {
   float: right;
-    width: 600px;
+  width: 470px;
 }
 .left_b {
   float: left;
   border-right: 1px solid black;
   padding-right: 12px;
+  width: 300px;
  
 }
 h3 {

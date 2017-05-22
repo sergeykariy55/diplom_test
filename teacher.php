@@ -76,6 +76,7 @@
 		$content = $_POST['data'];
 		$user_id = $_SESSION['id'];
 		$p_name = $result['fio'];
+
 		$q = "INSERT INTO `events`(`prepod_id`,`content`, `title`) VALUES ('$user_id','$content','$name')";
 		if($dbh->query($q)){
 			echo "<p class=war1>Ваша запись успешно добавлена</p>";
@@ -83,9 +84,15 @@
 			echo "Ошибка";
 		}
 
+		//получаем id события
+		$res = $dbh->query("SELECT id FROM events ORDER BY id DESC LIMIT 1");
+		$result = $res->fetch(PDO::FETCH_LAZY);
+
+		$id_event = $result['id'];
+
 		$users = $_POST['users'];
 		foreach ($users as $key => $value) {
-			$dbh->query("INSERT INTO `user_events`(`id_user`, `name_prepod`, `content`, `title_events`) VALUES ('$value','$p_name','$content','$name')");
+			$dbh->query("INSERT INTO `user_events`(`id_user`, `name_prepod`, `content`, `title_events`, `id_event`) VALUES ('$value','$p_name','$content','$name','$id_event')");
 		}
 
 

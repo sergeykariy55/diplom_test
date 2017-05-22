@@ -27,6 +27,7 @@
 						<div class="name_user"><p>Создатель занятия: <?=$val['name_prepod'];?></p></div>
 						<div class="name_user"><p>Название: <?=$val['title_events'];?></p></div>
 						<div class="data"><?=$val['content'];?></div>
+						<a href=event.php?id_event=<?=$val['id_event'];?>>Перейти</a>
 					</div>
 				<?php
 				}

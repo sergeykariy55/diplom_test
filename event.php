@@ -2,13 +2,25 @@
     session_start();
     include "admin/config.php";
     $id_event = $_GET['id_event'];
+
     $id_teacher = $_GET['id_teacher'];
 
-    $res = $dbh->query("SELECT * FROM `events` WHERE `id` = $id_event and `prepod_id`= $id_teacher");
-	$result = $res->fetch(PDO::FETCH_LAZY);
+    if($id_teacher){
 
-	$res = $dbh->query("SELECT * FROM `prepod` WHERE `id` = $id_teacher");
-	$result_teacher = $res->fetch(PDO::FETCH_LAZY);
+    	$res = $dbh->query("SELECT * FROM `prepod` WHERE `id` = $id_teacher");
+		$result_teacher = $res->fetch(PDO::FETCH_LAZY);
+
+		$res = $dbh->query("SELECT * FROM `events` WHERE `id` = $id_event and `prepod_id`= $id_teacher");
+		$result = $res->fetch(PDO::FETCH_LAZY);
+
+    }else{
+    	$res = $dbh->query("SELECT * FROM `events` WHERE `id` = $id_event");
+		$result = $res->fetch(PDO::FETCH_LAZY);
+    }
+ 
+
+	/*$res = $dbh->query("SELECT * FROM `prepod` WHERE `id` = $id_teacher");
+	$result_teacher = $res->fetch(PDO::FETCH_LAZY);*/
 ?>﻿
 <html>
 <head>
